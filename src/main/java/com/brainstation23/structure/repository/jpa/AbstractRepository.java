@@ -13,5 +13,5 @@ import java.util.List;
  */
 @NoRepositoryBean
 public interface AbstractRepository <ENTITY extends AbstractEntity> extends JpaRepository<ENTITY, Long> {
-//    List<ENTITY> findAllLastModifiedAt(LocalDateTime time);
+    List<ENTITY> findAllModifiedSince(LocalDateTime time);
 }
