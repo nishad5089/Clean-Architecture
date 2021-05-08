@@ -14,6 +14,7 @@ import java.util.List;
  * @author Abdur Rahim Nishad
  * @since 1.0.0
  */
+
 public class AbstractRepositoryImpl<ENTITY extends AbstractEntity> extends SimpleJpaRepository<ENTITY, Long> implements AbstractRepository<ENTITY>, JpaSpecificationExecutor<ENTITY> {
 
     public AbstractRepositoryImpl(final JpaEntityInformation<ENTITY, Integer> entityInformation,
@@ -26,6 +27,6 @@ public class AbstractRepositoryImpl<ENTITY extends AbstractEntity> extends Simpl
     }
 
     private Specification<ENTITY> modifiedSince(final LocalDateTime time) {
-        return ((root, query, cb) -> cb.greaterThanOrEqualTo(root.get("modified"), time));
+        return ((root, query, cb) -> cb.greaterThanOrEqualTo(root.get("modifiedAt"), time));
     }
 }

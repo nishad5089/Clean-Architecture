@@ -34,8 +34,10 @@ public abstract class AbstractEntity{
     protected LocalDateTime createdAt;
 
     @LastModifiedBy
-    protected String lastModifiedBy;
+    protected String modifiedBy;
 
     @LastModifiedDate
-    protected LocalDateTime lastModifiedAt;
+    protected LocalDateTime modifiedAt;
+
+    private String isDeleted;
 }

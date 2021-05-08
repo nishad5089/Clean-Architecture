@@ -46,8 +46,8 @@ public class AbstractController <ENTITY extends AbstractEntity,REQUEST extends B
         return api.delete(id);
     }
 
-    @GetMapping("/modified")
-    public List<RESPONSE> modified(@RequestParam("modifiedSince") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime time) {
+    @GetMapping("/modifiedSince")
+    public List<RESPONSE> modified(@RequestParam("time") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime time) {
         return api.modifiedSince(time);
     }
 }

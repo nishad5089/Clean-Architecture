@@ -75,9 +75,8 @@ public abstract class AbstractService<ENTITY extends AbstractEntity,REQUEST exte
 
     @Override
     public List<RESPONSE> modifiedSince(LocalDateTime time) {
-//        final List<ENTITY> entities = repository.findAllLastModifiedAt(time);
-//        return getResponses(entities);
-        return null;
+        final List<ENTITY> entities = repository.findAllModifiedSince(time);
+        return getResponses(entities);
     }
 
     @Override
